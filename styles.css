@@ -1,0 +1,57 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background: #c3c3c3;
+  background-image: url("https://media.istockphoto.com/photos/design-of-dark-wood-background-picture-id525108931?b=1&k=20&m=525108931&s=170667a&w=0&h=1ClSyZ05SfWGiL_5Q24Z3NLpHbbGbrj_671k4ZavliQ=");  
+}
+
+.memory-game {
+  width: 550px;
+  height: 550px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  border-radius: 10px;
+  background: #ffffff;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
